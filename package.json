@@ -1,0 +1,71 @@
+{
+  "name": "vscode-xslt-debug",
+  "version": "1.0.0",
+  "main": "./src/extension",
+  "scripts": {
+    "prebuild": "./prebuild.bash",
+    "build": "tsc -p ./src/",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^13.9.6",
+    "@types/vscode": "^1.43.0",
+    "typescript": "^3.8.3",
+    "vsce": "^1.74.0"
+  },
+  "engines": {
+    "vscode": "^1.43.0"
+  },
+  "activationEvents": [
+    "onDebug"
+  ],
+  "contributes": {
+    "breakpoints": [
+      { "language": "xsl" }
+    ],
+    "debuggers": [
+      {
+        "type": "xslt",
+        "label": "XSLT Debug",
+        "configurationAttributes": {
+          "launch": {
+            "required": [
+              "xslPath",
+              "sourcePath",
+              "destinationPath"
+            ],
+            "properties": {
+              "xslPath": {
+                "type": "string",
+                "description": "Absolute path to an XSL template file.",
+                "default": "${workspaceFolder}/transform.xsl"
+              },
+              "sourcePath": {
+                "type": "string",
+                "description": "Absolute path to an input XML file.",
+                "default": "${workspaceFolder}/input.xml"
+              },
+              "destinationPath": {
+                "type": "string",
+                "description": "Absolute path to an output file.",
+                "default": "${workspaceFolder}/output.xml"
+              }
+            }
+          }
+        },
+        "initialConfigurations": [
+          {
+            "type": "xslt",
+            "request": "launch",
+            "name": "XSL Transform",
+            "xslPath": "${workspaceFolder}/transform.xsl",
+            "sourcePath": "${workspaceFolder}/input.xml",
+            "destinationPath": "${workspaceFolder}/output.xml"
+          }
+        ]
+      }
+    ]
+  }
+}
