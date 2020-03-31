@@ -1,6 +1,6 @@
 {
   "name": "vscode-xslt-debug",
-  "version": "1.0.0",
+	"version": "1.0.0",
   "main": "./src/extension",
   "scripts": {
     "prebuild": "./prebuild.bash",
@@ -8,7 +8,6 @@
     "package": "vsce package",
     "publish": "vsce publish"
   },
-  "private": true,
   "devDependencies": {
     "@types/node": "^13.9.6",
     "@types/vscode": "^1.43.0",
@@ -67,5 +66,10 @@
         ]
       }
     ]
-  }
+	},
+  "private": true,
+	"publisher": "philschatz",
+	"repository": {
+		"url": "https://github.com/philschatz/vscode-xslt-debug"
+	}
 }
