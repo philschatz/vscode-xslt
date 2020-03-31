@@ -7,7 +7,7 @@
 
 1. Make sure `java` is installed and available in the current path
 1. Run `npm install` in this repo
-1. Run [./prebuild.bash](./prebuild.bash) to make sure the XSLT jar is available
+1. Run [./prebuild.bash](./prebuild.bash) to make sure the XSLT jar is available (from [xslt-debug-adapter](https://github.com/philschatz/xslt-debug-adapter))
 1. Open up the repo in VSCode and press <kbd>F5</kbd> to start a development instance of VSCode
 1. Open a directory in the dev VSCode with an XSLT file and an input XML file
 1. Create a launch config.json that has this in it:
