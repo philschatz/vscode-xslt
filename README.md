@@ -2,6 +2,7 @@
 
 ![xslt-debugger](https://user-images.githubusercontent.com/253202/77986979-307c9a80-72de-11ea-874f-f335133f451e.gif)
 
+This debugger allows you to set breakpoints in the XSL file _and_ the source XML document. If a breakpoint is set in the source XML document then every template that matches the breakpoint will pause.
 
 ## Steps to run
 
@@ -18,7 +19,11 @@
       "name": "Debug XSLT File",
       "xslPath": "${workspaceFolder}/my_transform.xsl",
       "sourcePath": "${workspaceFolder}/my_input.xml",
-      "destinationPath": "${workspaceFolder}/my_output.xml"
+      "destinationPath": "${workspaceFolder}/my_output.xml",
+      "parameters": {
+        "theseAreOptional": true,
+        "andCanBeOmmittedIfYou": "do not use them"
+      }
     }
   ]
 }
