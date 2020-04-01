@@ -40,7 +40,7 @@
             "properties": {
               "xslPath": {
                 "type": "string",
-                "description": "Absolute path to an XSL template file.",
+                "description": "Absolute path to an XSL stylesheet file.",
                 "default": "${workspaceFolder}/transform.xsl"
               },
               "sourcePath": {
@@ -52,6 +52,10 @@
                 "type": "string",
                 "description": "Absolute path to an output file.",
                 "default": "${workspaceFolder}/output.xml"
+              },
+              "parameters": {
+                "type": "object",
+                "description": "Additional parameters (xsl:param) passed to the XSLT stylesheet"
               }
             }
           }
