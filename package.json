@@ -2,11 +2,12 @@
   "name": "vscode-xslt",
   "displayName": "XSLT Interactive Debugger",
   "description": "Interactively step through your XSLT transformation by setting breakpoints and using the Debugger.",
-	"version": "1.4.0",
+  "version": "1.4.0",
   "main": "./src/extension",
   "scripts": {
     "prebuild": "./prebuild.bash",
     "build": "tsc -p ./src/",
+    "watch": "tsc -w -p ./src",
     "package": "vsce package",
     "publish": "vsce publish"
   },
@@ -24,9 +25,15 @@
   ],
   "contributes": {
     "breakpoints": [
-      { "language": "html" },
-      { "language": "xml" },
-      { "language": "xsl" }
+      {
+        "language": "html"
+      },
+      {
+        "language": "xml"
+      },
+      {
+        "language": "xsl"
+      }
     ],
     "debuggers": [
       {
@@ -74,10 +81,10 @@
         ]
       }
     ]
-	},
+  },
   "private": true,
-	"publisher": "philschatz",
-	"repository": {
-		"url": "https://github.com/philschatz/vscode-xslt-debug"
-	}
+  "publisher": "philschatz",
+  "repository": {
+    "url": "https://github.com/philschatz/vscode-xslt"
+  }
 }
