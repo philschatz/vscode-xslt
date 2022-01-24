@@ -29,6 +29,20 @@ This debugger allows you to set breakpoints in the XSL file _and_ the source XML
 }
 ```
 
+## Windows Users
+
+Users of Windows Subsystem for Linux (WSL) have reported problems with breakpoints. Installing OpenJDK 11+ [seems to fix the problem](https://marketplace.visualstudio.com/items?itemName=philschatz.vscode-xslt&ssr=false#review-details).
+
+```
+WSL: sudo apt install default-jre
+js@JS-DESKTOP:/mnt/d/Temp/psh/xslt_debug$ java -version
+openjdk version "11.0.13" 2021-10-19
+OpenJDK Runtime Environment (build 11.0.13+8-Ubuntu-0ubuntu1.18.04)
+OpenJDK 64-Bit Server VM (build 11.0.13+8-Ubuntu-0ubuntu1.18.04, mixed mode, sharing)
+
+Success: hits Breakpoint!
+```
+
 ## Local Development
 
 1. Run `npm install` in this repo
